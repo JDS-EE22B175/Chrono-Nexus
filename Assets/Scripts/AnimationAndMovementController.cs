@@ -21,7 +21,6 @@ public class AnimationAndMovementController : MonoBehaviour
     bool isRunPressed;
     float rotationFactorPerFrame = 5f;
     float runSpeedMultiplier = 4f;
-    public Quaternion angleForward;
 
     // Start is called before the first frame update
 
@@ -129,10 +128,6 @@ public class AnimationAndMovementController : MonoBehaviour
         HandleGravity();
         HandleAnimations();
         //HandleRotation();
-
-        angleForward = Quaternion.Euler(0, Vector3.Angle(Vector3.right, transform.forward), 0);
-        currentMovement = angleForward * currentMovement;
-        currentRunMovement = angleForward * currentRunMovement;
 
 
         if (isRunPressed)
